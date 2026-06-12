@@ -4,7 +4,7 @@ import Button from "../components/Button/Button";
 import ProductCard from "../components/ProductCard/ProductCard";
 import ProductList from "../components/ProductList/ProductList";
 import { products } from "../data/products";
-
+import Footer from "../components/Footer/Footer";
 function Home() {
   return (
     <>
@@ -30,6 +30,7 @@ function Home() {
         </div>
         <ProductList products={products} />
       </main>
+      <Footer />
     </>
   );
 }
