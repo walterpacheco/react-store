@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import Button from "../components/Button/Button";
 import ProductList from "../components/ProductList/ProductList";
 import Cart from "../components/Cart/Cart";
+import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 
 import { products } from "../data/products";
@@ -67,7 +68,7 @@ function Home() {
           </div>
         </div>
       </main>
-
+      <Contact />
       <Footer />
     </>
   );
