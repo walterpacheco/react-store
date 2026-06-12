@@ -1,0 +1,58 @@
+export const products = [
+    {
+      id: 1,
+      name: "Notebook Gamer",
+      price: 799990,
+      category: "Computación",
+      image: "https://picsum.photos/id/180/600/400",
+    },
+    {
+      id: 2,
+      name: "Smartphone Pro",
+      price: 499990,
+      category: "Tecnología",
+      image: "https://picsum.photos/id/1/600/400",
+    },
+    {
+      id: 3,
+      name: "Audífonos Bluetooth",
+      price: 89990,
+      category: "Audio",
+      image: "https://picsum.photos/id/29/600/400",
+    },
+    {
+      id: 4,
+      name: "Smartwatch Fit",
+      price: 129990,
+      category: "Wearables",
+      image: "https://picsum.photos/id/30/600/400",
+    },
+    {
+      id: 5,
+      name: "Teclado Mecánico",
+      price: 69990,
+      category: "Periféricos",
+      image: "https://picsum.photos/id/60/600/400",
+    },
+    {
+      id: 6,
+      name: "Mouse Gamer",
+      price: 39990,
+      category: "Periféricos",
+      image: "https://picsum.photos/id/96/600/400",
+    },
+    {
+      id: 7,
+      name: "Monitor 27 Pulgadas",
+      price: 249990,
+      category: "Monitores",
+      image: "https://picsum.photos/id/48/600/400",
+    },
+    {
+      id: 8,
+      name: "Tablet Pro",
+      price: 349990,
+      category: "Tecnología",
+      image: "https://picsum.photos/id/20/600/400",
+    },
+  ];
