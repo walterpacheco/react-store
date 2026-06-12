@@ -2,7 +2,7 @@ import Header from "../components/Header/Header";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Button from "../components/Button/Button";
 import ProductCard from "../components/ProductCard/ProductCard";
-import ProductList from "../components/ProductList/ProductsList";
+import ProductList from "../components/ProductList/ProductList";
 import { products } from "../data/products";
 
 function Home() {
