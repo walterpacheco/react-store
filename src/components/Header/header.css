@@ -1,0 +1,50 @@
+.header {
+  padding: 1rem 0;
+}
+
+.header .nav-link {
+  color: #f8f9fa;
+}
+
+.header .nav-link:hover {
+  color: #0d6efd;
+}
+.header {
+  padding: 1rem 0;
+}
+
+.nav-spacing {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.nav-spacing:hover {
+  color: #0d6efd !important;
+}
+@media (max-width: 993px) {
+
+  .navbar-expand-lg .navbar-collapse {
+    display: none !important;
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    display: block !important;
+  }
+
+  .navbar-expand-lg.show-menu .navbar-collapse {
+    display: block !important;
+  }
+}
+
+/* Menú normal desde 900px */
+@media (min-width: 993px) {
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    display: none !important;
+  }
+}
