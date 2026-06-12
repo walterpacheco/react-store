@@ -1,7 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductsList.css";
 
-function ProductList({ products }) {
+function ProductList({ products, onAddToCart }) {
   return (
     <section className="product-list-section" id="productos">
       <div className="container">
@@ -19,13 +19,16 @@ function ProductList({ products }) {
               No se encontraron productos.
             </p>
           )}
+
           {products.map((product) => (
             <div className="col-12 col-md-6 col-lg-3" key={product.id}>
               <ProductCard
+                id={product.id}
                 name={product.name}
                 price={product.price}
                 category={product.category}
                 image={product.image}
+                onAddToCart={onAddToCart}
               />
             </div>
           ))}
