@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Button from "../components/Button/Button";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 function Home() {
   return (
@@ -11,19 +12,18 @@ function Home() {
         <SearchBar />
 
         <div className="mt-4 d-flex gap-3">
-          <Button
-            label="Ver productos"
-            variant="primary"
-          />
+          <Button label="Ver productos" variant="primary" />
 
-          <Button
-            label="Ofertas"
-            variant="secondary"
-          />
+          <Button label="Ofertas" variant="secondary" />
 
-          <Button
-            label="Más información"
-            variant="outline"
+          <Button label="Más información" variant="outline" />
+        </div>
+        <div className="mt-5">
+          <ProductCard
+            name="Notebook Gamer"
+            price={799990}
+            category="Computación"
+            image="https://picsum.photos/id/180/600/400"
           />
         </div>
       </main>
