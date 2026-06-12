@@ -2,6 +2,8 @@ import Header from "../components/Header/Header";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Button from "../components/Button/Button";
 import ProductCard from "../components/ProductCard/ProductCard";
+import ProductList from "../components/ProductList/ProductsList";
+import { products } from "../data/products";
 
 function Home() {
   return (
@@ -26,6 +28,7 @@ function Home() {
             image="https://picsum.photos/id/180/600/400"
           />
         </div>
+        <ProductList products={products} />
       </main>
     </>
   );
