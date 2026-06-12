@@ -2,7 +2,24 @@ import Button from "../Button/Button";
 import "./ProductCard.css";
 import { productCardData } from "./ProductCard.data";
 
-function ProductCard({ name, price, category, image }) {
+function ProductCard({
+  id,
+  name,
+  price,
+  category,
+  image,
+  onAddToCart,
+}) {
+  function handleAddToCart() {
+    onAddToCart({
+      id,
+      name,
+      price,
+      category,
+      image,
+    });
+  }
+
   return (
     <article className="product-card card h-100">
       <img
@@ -12,13 +29,9 @@ function ProductCard({ name, price, category, image }) {
       />
 
       <div className="card-body product-card__body">
-        <span className="product-card__category">
-          {category}
-        </span>
+        <span className="product-card__category">{category}</span>
 
-        <h3 className="product-card__title">
-          {name}
-        </h3>
+        <h3 className="product-card__title">{name}</h3>
 
         <p className="product-card__price">
           ${price.toLocaleString("es-CL")}
@@ -27,6 +40,7 @@ function ProductCard({ name, price, category, image }) {
         <Button
           label={productCardData.buttonLabel}
           variant="primary"
+          onClick={handleAddToCart}
         />
       </div>
     </article>
