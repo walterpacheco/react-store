@@ -1,0 +1,26 @@
+.search-bar-section {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+  }
+  
+  .search-label {
+    font-weight: 600;
+    color: #212529;
+  }
+  
+  .search-input {
+    max-width: 600px;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    border: 1px solid #ced4da;
+  }
+  
+  .search-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+  }
+  
+  .search-result-text {
+    margin-top: 1rem;
+    color: #495057;
+  }
