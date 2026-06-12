@@ -14,6 +14,11 @@ function ProductList({ products }) {
         </div>
 
         <div className="row g-4">
+          {products.length === 0 && (
+            <p className="text-center text-muted">
+              No se encontraron productos.
+            </p>
+          )}
           {products.map((product) => (
             <div className="col-12 col-md-6 col-lg-3" key={product.id}>
               <ProductCard

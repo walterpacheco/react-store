@@ -1,14 +1,7 @@
-import { useState } from "react";
 import "./SearchBar.css";
-import { searchBarData } from "./Search.data";
+import { searchBarData } from "./SearchBar.data";
 
-function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  function handleChange(event) {
-    setSearchTerm(event.target.value);
-  }
-
+function SearchBar({ searchTerm, onSearchChange }) {
   return (
     <section className="search-bar-section">
       <div className="container">
@@ -22,12 +15,12 @@ function SearchBar() {
           className="form-control search-input"
           placeholder={searchBarData.placeholder}
           value={searchTerm}
-          onChange={handleChange}
+          onChange={onSearchChange}
         />
 
         {searchTerm && (
           <p className="search-result-text">
-            Buscando: <strong>{searchTerm} ...</strong>
+            Buscando: <strong>{searchTerm}</strong>
           </p>
         )}
       </div>
