@@ -1,0 +1,29 @@
+.custom-button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .custom-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+  
+  .custom-button--primary {
+    background-color: #0d6efd;
+    color: #ffffff;
+  }
+  
+  .custom-button--secondary {
+    background-color: #212529;
+    color: #ffffff;
+  }
+  
+  .custom-button--outline {
+    background-color: transparent;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+  }
