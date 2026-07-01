@@ -1,25 +1,62 @@
 # React Store
 
-React Store es una aplicación desarrollada con React y Vite que simula la interfaz de un e-commerce. El proyecto fue creado con el objetivo de aplicar conceptos fundamentales de React, incluyendo componentes reutilizables, props, estado mediante useState y renderizado dinámico de datos.
+React Store es una aplicación desarrollada con **React + Vite** que simula un e-commerce moderno. La aplicación consume productos desde la API pública **DummyJSON**, permitiendo visualizar un catálogo dinámico, buscar productos y gestionar un carrito de compras.
+
+---
 
 ## Tecnologías utilizadas
 
-* React
-* Vite
-* JavaScript ES6+
-* Bootstrap 5
-* CSS3
-* Git y GitHub
+- React
+- Vite
+- JavaScript ES6+
+- Bootstrap 5
+- CSS3
+- Fetch API
+- Git y GitHub
+
+---
+
+## API utilizada
+
+Los productos se obtienen desde la API pública DummyJSON:
+
+https://dummyjson.com/products
+
+La aplicación implementa:
+
+- Consumo de API mediante **fetch**.
+- Manejo de **loading**.
+- Manejo de **errores**.
+- Renderizado dinámico de productos.
+
+---
 
 ## Características
 
-* Navegación mediante componente Header.
-* Buscador dinámico de productos.
-* Renderizado de productos mediante ProductList y ProductCard.
-* Componente Button reutilizable.
-* Footer informativo.
-* Filtrado de productos por nombre y categoría.
-* Arquitectura basada en componentes reutilizables.
+- Catálogo dinámico de productos.
+- Búsqueda por nombre o categoría.
+- Carrito de compras.
+- Formulario de contacto con validaciones.
+- Componentes reutilizables.
+- Diseño responsive.
+- Manejo de estados con React Hooks.
+
+---
+
+## Componentes desarrollados
+
+- Header
+- SearchBar
+- Button
+- ProductCard
+- ProductList
+- Cart
+- Contact
+- Loader
+- ErrorMessage
+- Footer
+
+---
 
 ## Estructura del proyecto
 
@@ -33,41 +70,35 @@ src/
 │   ├── ProductList/
 │   ├── Cart/
 │   ├── Contact/
+│   ├── Loader/
+│   ├── ErrorMessage/
 │   └── Footer/
+├── pages/
+│   └── Home.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
-## Componentes desarrollados
+---
 
-### Header
+## Funcionalidades implementadas
 
-Componente encargado de mostrar el menú de navegación principal.
+- Componentes reutilizables.
+- Props.
+- useState.
+- useEffect.
+- Fetch API.
+- Renderizado condicional.
+- Renderizado mediante map().
+- Manejo de eventos.
+- Filtro dinámico de productos.
+- Carrito de compras.
+- Formularios controlados.
+- Validación de formularios.
+- Organización modular del proyecto.
 
-### SearchBar
-
-Componente que permite buscar productos mediante un input controlado utilizando useState.
-
-### Button
-
-Componente reutilizable que permite mostrar distintos estilos de botones mediante props.
-
-### ProductCard
-
-Componente encargado de representar la información individual de un producto.
-
-### ProductList
-
-Componente que renderiza múltiples productos utilizando el método map().
-### Cart
-
-Componente encargado de gestionar el carrito de compras, mostrar productos seleccionados, eliminar productos y calcular el total de la compra.
-
-### Contact
-
-Componente encargado de mostrar información de contacto y un formulario validado para comunicación con el usuario.
-
-### Footer
-
-Componente encargado de mostrar información general del proyecto.
+---
 
 ## Instalación
 
@@ -89,33 +120,39 @@ Instalar dependencias:
 npm install
 ```
 
-Ejecutar en modo desarrollo:
+Ejecutar la aplicación:
 
 ```bash
 npm run dev
 ```
 
-## Funcionalidades React implementadas
+---
 
-* Componentes reutilizables.
-* Props.
-* useState.
-* Renderizado condicional.
-* Renderizado de listas mediante map().
-* Manejo de eventos.
-* Filtro dinámico de productos.
-* Carrito de compras.
-* Formularios controlados.
-* Validación de formularios.
-* Organización modular del proyecto.
+## Capturas de pantalla
+
+### Vista general
+
+![Vista principal](./docs/home.png)
+
+### Búsqueda de productos
+
+![Búsqueda](./docs/search.png)
+
+### Estado de carga
+
+![Loading](./docs/loading.png)
+
+---
 
 ## Autor
 
 Walter Pacheco
 
+---
+
 ## Estado del proyecto
 
-Proyecto desarrollado con fines académicos para la asignatura de React.
+Proyecto desarrollado con fines académicos para el Diplomado Full Stack, aplicando buenas prácticas de React, organización por componentes y consumo de APIs.
 ## Capturas de pantalla
 
 ### Vista principal
@@ -125,3 +162,7 @@ Proyecto desarrollado con fines académicos para la asignatura de React.
 ### Búsqueda de productos
 
 ![Búsqueda](./docs/search.png)
+
+### Loading
+
+![Búsqueda](./docs/loading.png)
