@@ -16,6 +16,7 @@ function Home() {
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const [showOnlyOffers, setShowOnlyOffers] = useState(false);
 
   useEffect(() => {
     async function getProducts() {
@@ -42,14 +43,20 @@ function Home() {
   const filteredProducts = products.filter((product) => {
     const search = searchTerm.toLowerCase();
 
-    return (
+    const matchesSearch =
       product.title.toLowerCase().includes(search) ||
-      product.category.toLowerCase().includes(search)
-    );
+      product.category.toLowerCase().includes(search);
+
+    const matchesOffer = showOnlyOffers
+      ? product.discountPercentage > 10
+      : true;
+
+    return matchesSearch && matchesOffer;
   });
 
   function handleSearchChange(event) {
     setSearchTerm(event.target.value);
+    setShowOnlyOffers(false);
   }
 
   function addToCart(product) {
@@ -59,7 +66,28 @@ function Home() {
   function removeFromCart(productId) {
     setCartItems(cartItems.filter((item) => item.id !== productId));
   }
+  function scrollToProducts() {
+    setShowOnlyOffers(false);
+  
+    document.getElementById("productos")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
+  function showOffers() {
+  setShowOnlyOffers(true);
+  setSearchTerm("");
+
+  document.getElementById("productos")?.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+  function scrollToContact() {
+    document.getElementById("contacto")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
   return (
     <>
       <Header />
@@ -72,9 +100,19 @@ function Home() {
           />
 
           <div className="mt-4 d-flex gap-3 flex-wrap">
-            <Button label="Ver productos" variant="primary" />
-            <Button label="Ofertas" variant="secondary" />
-            <Button label="Más información" variant="outline" />
+            <Button
+              label="Ver productos"
+              variant="primary"
+              onClick={scrollToProducts}
+            />
+
+            <Button label="Ofertas" variant="secondary" onClick={showOffers} />
+
+            <Button
+              label="Más información"
+              variant="outline"
+              onClick={scrollToContact}
+            />
           </div>
         </div>
 
@@ -93,10 +131,7 @@ function Home() {
               </div>
 
               <div className="col-lg-3">
-                <Cart
-                  items={cartItems}
-                  onRemoveFromCart={removeFromCart}
-                />
+                <Cart items={cartItems} onRemoveFromCart={removeFromCart} />
               </div>
             </div>
           </div>
