@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "../components/Header/Header";
 import SearchBar from "../components/SearchBar/SearchBar";
@@ -7,18 +7,43 @@ import ProductList from "../components/ProductList/ProductList";
 import Cart from "../components/Cart/Cart";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
-
-import { products } from "../data/products";
+import Loader from "../components/Loader/Loader";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const response = await fetch("https://dummyjson.com/products");
+
+        if (!response.ok) {
+          throw new Error("No se pudieron cargar los productos.");
+        }
+
+        const data = await response.json();
+
+        setProducts(data.products);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getProducts();
+  }, []);
 
   const filteredProducts = products.filter((product) => {
     const search = searchTerm.toLowerCase();
 
     return (
-      product.name.toLowerCase().includes(search) ||
+      product.title.toLowerCase().includes(search) ||
       product.category.toLowerCase().includes(search)
     );
   });
@@ -53,21 +78,31 @@ function Home() {
           </div>
         </div>
 
-        <div className="container-fluid px-4 mt-5">
-          <div className="row">
-            <div className="col-lg-9">
-              <ProductList
-                products={filteredProducts}
-                onAddToCart={addToCart}
-              />
-            </div>
+        {loading && <Loader />}
 
-            <div className="col-lg-3">
-              <Cart items={cartItems} onRemoveFromCart={removeFromCart} />
+        {error && <ErrorMessage message={error} />}
+
+        {!loading && !error && (
+          <div className="container-fluid px-4 mt-5">
+            <div className="row">
+              <div className="col-lg-9">
+                <ProductList
+                  products={filteredProducts}
+                  onAddToCart={addToCart}
+                />
+              </div>
+
+              <div className="col-lg-3">
+                <Cart
+                  items={cartItems}
+                  onRemoveFromCart={removeFromCart}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </main>
+
       <Contact />
       <Footer />
     </>

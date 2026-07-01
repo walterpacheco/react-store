@@ -24,10 +24,10 @@ function ProductList({ products, onAddToCart }) {
             <div className="col-12 col-md-6 col-lg-3" key={product.id}>
               <ProductCard
                 id={product.id}
-                name={product.name}
+                name={product.title}
                 price={product.price}
                 category={product.category}
-                image={product.image}
+                image={product.thumbnail}
                 onAddToCart={onAddToCart}
               />
             </div>
