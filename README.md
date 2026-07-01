@@ -31,14 +31,9 @@ src/
 │   ├── Button/
 │   ├── ProductCard/
 │   ├── ProductList/
+│   ├── Cart/
+│   ├── Contact/
 │   └── Footer/
-├── data/
-│   └── products.js
-├── pages/
-│   └── Home.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
 ```
 
 ## Componentes desarrollados
@@ -62,6 +57,13 @@ Componente encargado de representar la información individual de un producto.
 ### ProductList
 
 Componente que renderiza múltiples productos utilizando el método map().
+### Cart
+
+Componente encargado de gestionar el carrito de compras, mostrar productos seleccionados, eliminar productos y calcular el total de la compra.
+
+### Contact
+
+Componente encargado de mostrar información de contacto y un formulario validado para comunicación con el usuario.
 
 ### Footer
 
@@ -101,6 +103,10 @@ npm run dev
 * Renderizado condicional.
 * Renderizado de listas mediante map().
 * Manejo de eventos.
+* Filtro dinámico de productos.
+* Carrito de compras.
+* Formularios controlados.
+* Validación de formularios.
 * Organización modular del proyecto.
 
 ## Autor
